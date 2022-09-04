@@ -41,16 +41,13 @@
 </x-app-layout>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family-Montserrat:600|Open+Sans:600&display-swap');
 
 .container2{
-    /* background-color: rgb(255, 255, 255); */
     border-radius: 20px;
     text-align: center;
     display: flex;
     margin: 90px;
     flex-direction: column;
-    /* box-shadow: 0 0 2em black; */
 }
 
 .tabela{
@@ -60,7 +57,7 @@
 }
 
 .tabela thead{
-    background-color: #ccc;
+    background-color: #ddd;
     
 }
 
@@ -73,10 +70,9 @@
 }
 
 .tabela th, .tabela td{
-    font-family: 'Montserrat' , sans-serif;
     padding: 15px;
     box-sizing: border-box;
-    border: 1px solid Gray;
+    border: 1px solid #ccc;
     max-width: 150px;
     color: black;
 }
@@ -85,11 +81,10 @@
 .buttonedit{
     width: 60px;
     background-color: rgb(225, 225, 225);
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 5px;
     color: black;
     padding: 5px;
-    font-family: 'Montserrat' , sans-serif;
     font-weight: bold;
 }
 .buttonedit:hover{

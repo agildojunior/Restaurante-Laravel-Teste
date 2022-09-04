@@ -17,9 +17,9 @@ class produtosController extends Controller
         return view('editarProduto', ['event' =>Produto::findOrFail($id)]);
     }
     public function editarproduto2($id, Request $request){
-
-        Produto::findOrFail($id)->update(['preco' => $request->input('preco')]);
-        
+        if( $request->input('preco') > 0){
+            Produto::findOrFail($id)->update(['preco' => $request->input('preco')]);
+        }
         return redirect('/produtos');
     }
 

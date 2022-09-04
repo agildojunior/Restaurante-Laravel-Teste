@@ -32,6 +32,8 @@ Route::middleware([
 
     //---------------------- mesas ----------------------
     Route::get('/mesas', [mesasController::class, 'todasmesas'])->name('mesas');
+    Route::get('/mesasSolicitar/{id}', [mesasController::class, 'reservarMesa'])->name('reservarMesa');
+    Route::get('/mesasConta/{id}', [mesasController::class, 'solicitarConta'])->name('solicitarConta');
     // Route::get('/mesas', function () {
     //     return view('mesas');
     // })->name('mesas');

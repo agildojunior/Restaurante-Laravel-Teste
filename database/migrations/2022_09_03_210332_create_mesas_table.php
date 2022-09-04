@@ -16,10 +16,7 @@ return new class extends Migration
         Schema::create('mesas', function (Blueprint $table) {
             $table->id();
             $table->string('status');//disponivel ou ocupada
-            $table->string('pessoa_1')->nullable();
-            $table->string('pessoa_2')->nullable();
-            $table->string('pessoa_3')->nullable();
-            $table->string('pessoa_4')->nullable();
+            $table->double('qtdd_Pessoas')->nullable();
             $table->double('qtdd_produto_1')->nullable();
             $table->double('qtdd_produto_2')->nullable();
             $table->double('qtdd_produto_3')->nullable();
@@ -48,6 +45,12 @@ return new class extends Migration
             )
         );
         // mesa4
+        DB::table('mesas')->insert(
+            array(
+                'status' => 'disponivel',
+            )
+        );
+        // mesa5
         DB::table('mesas')->insert(
             array(
                 'status' => 'disponivel',

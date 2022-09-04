@@ -36,7 +36,7 @@
     min-height: 500px;
     max-width: 600px;
     background-color: aliceblue;
-    font-family: 'Montserrat' , sans-serif;
+    /* font-family: 'Montserrat' , sans-serif; */
     align-items: center;
     text-align: left;
     justify-content: center;
@@ -72,6 +72,6 @@ h1{
     border-radius: 5px;
     color: black;
     padding: 15px;
-    font-family: 'Montserrat' , sans-serif;
+    /* font-family: 'Montserrat' , sans-serif; */
 }
 </style>
