@@ -30,30 +30,55 @@ return new class extends Migration
         DB::table('mesas')->insert(
             array(
                 'status' => 'disponivel',
+                'qtdd_produto_1' => 0,
+                'qtdd_produto_2' => 0,
+                'qtdd_produto_3' => 0,
+                'qtdd_produto_4' => 0,
+                'qtdd_produto_5' => 0,
             )
         );
         // mesa2
         DB::table('mesas')->insert(
             array(
                 'status' => 'disponivel',
+                'qtdd_produto_1' => 0,
+                'qtdd_produto_2' => 0,
+                'qtdd_produto_3' => 0,
+                'qtdd_produto_4' => 0,
+                'qtdd_produto_5' => 0,
             )
         );
         // mesa3
         DB::table('mesas')->insert(
             array(
                 'status' => 'disponivel',
+                'qtdd_produto_1' => 0,
+                'qtdd_produto_2' => 0,
+                'qtdd_produto_3' => 0,
+                'qtdd_produto_4' => 0,
+                'qtdd_produto_5' => 0,
             )
         );
         // mesa4
         DB::table('mesas')->insert(
             array(
                 'status' => 'disponivel',
+                'qtdd_produto_1' => 0,
+                'qtdd_produto_2' => 0,
+                'qtdd_produto_3' => 0,
+                'qtdd_produto_4' => 0,
+                'qtdd_produto_5' => 0,
             )
         );
         // mesa5
         DB::table('mesas')->insert(
             array(
                 'status' => 'disponivel',
+                'qtdd_produto_1' => 0,
+                'qtdd_produto_2' => 0,
+                'qtdd_produto_3' => 0,
+                'qtdd_produto_4' => 0,
+                'qtdd_produto_5' => 0,
             )
         );
         

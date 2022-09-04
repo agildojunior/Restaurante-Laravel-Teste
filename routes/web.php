@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\mesasController;
 use App\Http\Controllers\produtosController;
+use App\Http\Controllers\CaixaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,14 +35,16 @@ Route::middleware([
     Route::get('/mesas', [mesasController::class, 'todasmesas'])->name('mesas');
     Route::get('/mesasSolicitar/{id}', [mesasController::class, 'reservarMesa'])->name('reservarMesa');
     Route::get('/mesasConta/{id}', [mesasController::class, 'solicitarConta'])->name('solicitarConta');
-    // Route::get('/mesas', function () {
-    //     return view('mesas');
-    // })->name('mesas');
+    Route::get('/mesasAddPedidos/{id}', [mesasController::class, 'adicionarPedidos'])->name('adicionarPedidos');
 
     //---------------------- produtos ----------------------
     Route::get('/produtos', [produtosController::class, 'todosprodutos'])->name('produtos');
     //editar produto
     Route::get('/produtos/{id}', [produtosController::class, 'editarproduto'])->name('editarproduto');
     Route::get('/produtos2/{id}', [produtosController::class, 'editarproduto2'])->name('editarproduto2');
+    
+    //---------------------- Caixa ------------------------
+    Route::get('/addCaixa/{id}', [CaixaController::class, 'adicionarAoCaixa'])->name('adicionarAoCaixa');
+   
 });
 

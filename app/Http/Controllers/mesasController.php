@@ -4,11 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mesa;
+use App\Models\Produto;
 
 class mesasController extends Controller
 {
     public function todasmesas(){
-        return view('mesas', ['mesas' =>Mesa::all()]);
+        $var1 = Produto::findOrFail(1);
+        $var2 = Produto::findOrFail(2);
+        $var3 = Produto::findOrFail(3);
+        $var4 = Produto::findOrFail(4);
+        $var5 = Produto::findOrFail(5);
+        $precos = [
+            'produto1' => $var1->preco,
+            'produto2' => $var2->preco,
+            'produto3' => $var3->preco,
+            'produto4' => $var4->preco,
+            'produto5' => $var5->preco,
+        ];
+        return view('mesas', ['mesas' =>Mesa::all() , $precos ] , compact('precos'));
     }
 
     public function reservarMesa($id, Request $request){
@@ -19,10 +32,27 @@ class mesasController extends Controller
         return redirect('/mesas');
     }
 
+    public function adicionarPedidos($id, Request $request){
+        $var = Mesa::findOrFail($id);
+        Mesa::findOrFail($id)->update([
+            'qtdd_produto_1' => $var->qtdd_produto_1 + $request->input('aguas'),
+            'qtdd_produto_2' => $var->qtdd_produto_2 + $request->input('cervejas'),
+            'qtdd_produto_3' => $var->qtdd_produto_3 + $request->input('refrigerantes'),
+            'qtdd_produto_4' => $var->qtdd_produto_4 + $request->input('pf'),
+            'qtdd_produto_5' => $var->qtdd_produto_5 + $request->input('brigadeiro'),
+        ]);
+        return redirect('/mesas');
+    }
+
     public function solicitarConta($id, Request $request){
         Mesa::findOrFail($id)->update([
             'status' => 'disponivel',
             'qtdd_Pessoas' => null,
+            'qtdd_produto_1' => 0,
+            'qtdd_produto_2' => 0,
+            'qtdd_produto_3' => 0,
+            'qtdd_produto_4' => 0,
+            'qtdd_produto_5' => 0,
         ]);
         return redirect('/mesas');
     }

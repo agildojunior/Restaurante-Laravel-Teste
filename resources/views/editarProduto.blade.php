@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 
                 @csrf
-                <form class="formulario" action="{{ route('editarproduto2', ['id' => $event['id']]) }}"  method="get"> 
+                <form class="formulario"  method="get"> 
                     <h1>Produto: {{$event['name']}}</h1>
                     <div class="form-group">
                         <label>Novo preço:</label>
