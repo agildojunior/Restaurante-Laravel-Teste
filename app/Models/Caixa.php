@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Caixa extends Model
 {
-    protected $fillable = ['mesa_id','agua','cerveja','refrigerante','PF','brigadeiro','preco',
+    protected $fillable = ['mesa_id','agua','cerveja','refrigerante','PF','brigadeiro','preco','valor_por_cliente',
     'metodo_pagamento_1','metodo_pagamento_2','metodo_pagamento_3','metodo_pagamento_4'];
 
     protected $table = 'caixa';

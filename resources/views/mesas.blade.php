@@ -102,7 +102,7 @@
                         @endif
 
                         @if($mesa['status'] == 'ocupada') 
-                        <label for="modalmesaconta{{ $mesa->id }}" class="buttonmesa">Solicitar Conta</label>
+                        <label for="modalmesaconta{{ $mesa->id }}" class="buttonmesa">Receber Conta</label>
                             <input type="checkbox" id="modalmesaconta{{ $mesa->id }}" class="checkboxModal">
                             <div class="modalmesadiv">
                                 <label for="modalmesaconta{{ $mesa->id }}" class="fecharModal">X</label>
@@ -124,7 +124,7 @@
                                                         <option value="credito">credito</option>
                                                         <option value="pix">pix</option>
                                                     </select>
-                                                    <label>Valor da conta: {{ (($mesa['qtdd_produto_1']*$precos['produto1'])+($mesa['qtdd_produto_2']*$precos['produto2'])+($mesa['qtdd_produto_3']*$precos['produto3'])+($mesa['qtdd_produto_4']*$precos['produto4'])+($mesa['qtdd_produto_5']*$precos['produto5']))/$mesa['qtdd_Pessoas'] }} R$<label>
+                                                    <label>Valor da conta: {{round( (($mesa['qtdd_produto_1']*$precos['produto1'])+($mesa['qtdd_produto_2']*$precos['produto2'])+($mesa['qtdd_produto_3']*$precos['produto3'])+($mesa['qtdd_produto_4']*$precos['produto4'])+($mesa['qtdd_produto_5']*$precos['produto5']))/$mesa['qtdd_Pessoas'],2 )}} R$<label>
                                                 </div>
                                                 @endfor
                                                 

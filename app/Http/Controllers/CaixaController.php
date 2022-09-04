@@ -9,6 +9,10 @@ use App\Models\Produto;
 
 class CaixaController extends Controller
 {
+    public function caixaDados(){
+        return view('caixa', ['caixas' =>Caixa::all()]);
+    }
+
     public function adicionarAoCaixa($id, Request $request){
         
         $var = Mesa::findOrFail($id);
@@ -18,7 +22,8 @@ class CaixaController extends Controller
         $var4 = Produto::findOrFail(4);
         $var5 = Produto::findOrFail(5);
         $preco = (($var->qtdd_produto_1 * $var1->preco)+($var->qtdd_produto_2 * $var2->preco)+($var->qtdd_produto_3 * $var3->preco)+($var->qtdd_produto_4 * $var4->preco)+($var->qtdd_produto_5 * $var5->preco));
-        
+        $precodividido = ($preco/$var->qtdd_Pessoas);
+
         Caixa::create([
             'mesa_id' => $var->id,
             'agua' => $var->qtdd_produto_1,
@@ -27,6 +32,7 @@ class CaixaController extends Controller
             'PF' => $var->qtdd_produto_4,
             'brigadeiro' => $var->qtdd_produto_5,
             'preco' => $preco,
+            'valor_por_cliente' => $precodividido,
             'metodo_pagamento_1' => $request->input('metodo1'),
             'metodo_pagamento_2' => $request->input('metodo2'),
             'metodo_pagamento_3' => $request->input('metodo3'),

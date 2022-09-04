@@ -39,11 +39,11 @@ Route::middleware([
 
     //---------------------- produtos ----------------------
     Route::get('/produtos', [produtosController::class, 'todosprodutos'])->name('produtos');
-    //editar produto
     Route::get('/produtos/{id}', [produtosController::class, 'editarproduto'])->name('editarproduto');
     Route::get('/produtos2/{id}', [produtosController::class, 'editarproduto2'])->name('editarproduto2');
     
     //---------------------- Caixa ------------------------
+    Route::get('/caixa', [CaixaController::class, 'caixaDados'])->name('caixa');
     Route::get('/addCaixa/{id}', [CaixaController::class, 'adicionarAoCaixa'])->name('adicionarAoCaixa');
    
 });

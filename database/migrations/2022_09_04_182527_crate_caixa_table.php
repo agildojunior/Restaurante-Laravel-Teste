@@ -22,6 +22,7 @@ return new class extends Migration
             $table->double('PF')->nullable();
             $table->double('brigadeiro')->nullable();
             $table->double('preco')->nullable();
+            $table->double('valor_por_cliente')->nullable();
             $table->string('metodo_pagamento_1')->nullable();
             $table->string('metodo_pagamento_2')->nullable();
             $table->string('metodo_pagamento_3')->nullable();

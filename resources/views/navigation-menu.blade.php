@@ -22,9 +22,16 @@
                         {{ __('Mesas') }}
                     </x-jet-nav-link>
                 </div>
+                <!-- produtos -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('produtos') }}" :active="request()->routeIs('produtos')">
                         {{ __('Produtos') }}
+                    </x-jet-nav-link>
+                </div>
+                <!-- caixa -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('caixa') }}" :active="request()->routeIs('caixa')">
+                        {{ __('Caixa') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -158,6 +165,10 @@
 
             <x-jet-responsive-nav-link href="{{ route('produtos') }}" :active="request()->routeIs('produtos')">
                 {{ __('Produtos') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('caixa') }}" :active="request()->routeIs('caixa')">
+                {{ __('caixa') }}
             </x-jet-responsive-nav-link>
         </div>
 
