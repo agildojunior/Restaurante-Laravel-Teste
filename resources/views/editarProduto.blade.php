@@ -17,7 +17,7 @@
                         <input type="text" value="" placeholder="{{$event['preco']}}" name="preco" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="">Editar Empresa</button>
+                        <button type="submit" class="">Editar</button>
                     </div>
 
                 </form>

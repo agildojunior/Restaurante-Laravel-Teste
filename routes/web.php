@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\mesasController;
 use App\Http\Controllers\produtosController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,10 @@ Route::middleware([
     })->name('dashboard');
 
     //---------------------- mesas ----------------------
-    Route::get('/mesas', function () {
-        return view('mesas');
-    })->name('mesas');
+    Route::get('/mesas', [mesasController::class, 'todasmesas'])->name('mesas');
+    // Route::get('/mesas', function () {
+    //     return view('mesas');
+    // })->name('mesas');
 
     //---------------------- produtos ----------------------
     Route::get('/produtos', [produtosController::class, 'todosprodutos'])->name('produtos');

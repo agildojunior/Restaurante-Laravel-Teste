@@ -44,15 +44,12 @@
 @import url('https://fonts.googleapis.com/css?family-Montserrat:600|Open+Sans:600&display-swap');
 
 .container2{
-    min-height: 500px;
-    min-width: 500px;
     /* background-color: rgb(255, 255, 255); */
     border-radius: 20px;
     text-align: center;
     display: flex;
     margin: 90px;
     flex-direction: column;
-    transition: all .5s ease;
     /* box-shadow: 0 0 2em black; */
 }
 
@@ -63,7 +60,7 @@
 }
 
 .tabela thead{
-    background-color: Silver;
+    background-color: #ccc;
     
 }
 
