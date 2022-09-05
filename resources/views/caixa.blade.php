@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/caixa.css') }}"> 
+<head>
 <x-app-layout>
     <!-- tailwind -->
     <x-slot name="header">
@@ -56,52 +59,4 @@
 
 <style>
 
-.container2{
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    margin: 20px;
-    flex-direction: column;
-}
-
-.tabela{
-    border-collapse: collapse;
-    max-height: 400px;
-    overflow-x: hidden;
-}
-
-.tabela thead{
-    background-color: #ddd;
-    
-}
-
-.tabela thead tr th{
-    color: black;
-}
-
-.tabela td{
-    background-color: white;
-}
-
-.tabela th, .tabela td{
-    padding: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    max-width: 150px;
-    color: black;
-}
-
-
-.buttonedit{
-    width: 60px;
-    background-color: rgb(225, 225, 225);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: black;
-    padding: 5px;
-    font-weight: bold;
-}
-.buttonedit:hover{
-    background-color: rgb(200, 200, 200);
-}
-</style>
+</style> 

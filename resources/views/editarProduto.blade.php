@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/editarproduto.css') }}"> 
+<head>
 <x-app-layout>
     <!-- tailwind -->
     <x-slot name="header">
@@ -11,7 +14,7 @@
                 
                 @csrf
                 <form class="formulario"  method="get"> 
-                    <h1>Produto: {{$event['name']}}</h1>
+                    <h1 class="h1titulo">Produto: {{$event['name']}}</h1>
                     <div class="form-group">
                         <label>Novo preço:</label>
                         <input type="text" value="" placeholder="{{$event['preco']}}" name="preco" required>
@@ -28,50 +31,5 @@
 </x-app-layout>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family-Montserrat:600|Open+Sans:600&display-swap');
 
-
-.cadastro-div{
-    color: white;
-    min-height: 500px;
-    max-width: 600px;
-    background-color: aliceblue;
-    /* font-family: 'Montserrat' , sans-serif; */
-    align-items: center;
-    text-align: left;
-    justify-content: center;
-    border:1px solid black;
-    background-color: #1b1b1b;
-}
-h1{
-    font-size: 40px;
-}
-
-.formulario{
-    padding: 20px 50px 20px 20px;
-    display: block;
-}
-
-.form-group input{
-    display: block;
-    width: 290px;
-    padding: 10px;
-    margin-bottom: 1em;
-    font: 1em 'Montserrat' , sans-serif;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.form-group label{
-    text-align: left;
-}
-
-.form-group button{
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    color: black;
-    padding: 15px;
-    /* font-family: 'Montserrat' , sans-serif; */
-}
 </style>

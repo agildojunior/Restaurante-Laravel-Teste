@@ -172,7 +172,7 @@
 </x-app-layout>
 
 <style>
-    
+
 .checkboxModal{
     display: none;
 }
@@ -210,4 +210,5 @@
     display: block;
 }
 /* -------------------------- */
+
 </style>
