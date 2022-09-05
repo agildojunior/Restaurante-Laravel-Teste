@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Mesa;
 use App\Models\Produto;
+use App\Models\Movimentacoes;
 
 class mesasController extends Controller
+
 {
     public function todasmesas(){
         $var1 = Produto::findOrFail(1);
@@ -24,6 +26,10 @@ class mesasController extends Controller
         return view('mesas', ['mesas' =>Mesa::all() , $precos ] , compact('precos'));
     }
 
+    public function movimentacoesDados(){
+        return view('movimentacoes', ['movimentacoes' =>Movimentacoes::all()]);
+    }
+    
     public function reservarMesa($id, Request $request){
         Mesa::findOrFail($id)->update([
             'status' => 'ocupada',
@@ -34,6 +40,23 @@ class mesasController extends Controller
 
     public function adicionarPedidos($id, Request $request){
         $var = Mesa::findOrFail($id);
+        $p1 = Produto::findOrFail(1)->preco;
+        $p2 = Produto::findOrFail(2)->preco;
+        $p3 = Produto::findOrFail(3)->preco;
+        $p4 = Produto::findOrFail(4)->preco;
+        $p5 = Produto::findOrFail(5)->preco;
+        $valorprodutos = ($p1*$request->input('aguas'))+($p2*$request->input('cervejas'))+($p3*$request->input('refrigerantes'))+($p4*$request->input('pf'))+($p5*$request->input('brigadeiro'));
+
+        Movimentacoes::create([
+            'mesa_id' => $id,
+            'agua' => $request->input('aguas'),
+            'cerveja' => $request->input('cervejas'),
+            'refrigerante' => $request->input('refrigerantes'),
+            'PF' => $request->input('pf'),
+            'brigadeiro' => $request->input('brigadeiro'),
+            'preco' => $valorprodutos,
+        ]);
+
         Mesa::findOrFail($id)->update([
             'qtdd_produto_1' => $var->qtdd_produto_1 + $request->input('aguas'),
             'qtdd_produto_2' => $var->qtdd_produto_2 + $request->input('cervejas'),
@@ -41,6 +64,7 @@ class mesasController extends Controller
             'qtdd_produto_4' => $var->qtdd_produto_4 + $request->input('pf'),
             'qtdd_produto_5' => $var->qtdd_produto_5 + $request->input('brigadeiro'),
         ]);
+
         return redirect('/mesas');
     }
 
