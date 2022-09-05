@@ -1,0 +1,175 @@
+.container2{
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+}
+.textomesa{
+    color: black;
+    font-weight: 600;
+    margin: 10px;
+}
+.buttonmesa{
+    color: black;
+    font-weight: 600;
+    margin: 10px;
+}
+.buttonmesa:hover{
+    color: #4169e1;
+    cursor: pointer;
+}
+.mesa{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    margin: 20px;
+    background-color: #ddd;
+}
+.checkboxModal{
+    display: none;
+}
+/* ---- Mesa Pedir Conta ---- */
+#modalmesaconta1:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaconta2:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaconta3:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaconta4:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaconta5:checked + .modalmesadiv{
+    display: block;
+}
+/* -------------------------- */
+/* ---- Mesa Normal ---- */
+#modalmesa1:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesa2:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesa3:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesa4:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesa5:checked + .modalmesadiv{
+    display: block;
+}
+/* -------------------------- */
+.clientePagamento{
+    display: block;
+}
+.pagamento{
+    display: none;
+}
+.modalmesadiv{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    left: 0px;
+    top: 0px;
+}
+.fecharModal{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+}
+.fecharModal:hover{
+    cursor: pointer;
+    color: #4169e1;
+}
+.conteudomodal{
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: 75%;
+    height: 100%;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+.divcenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-group .h1solicitar{
+    margin-top: 25vh;
+    font-size: 40px; 
+}
+.h1pedidos{
+    font-size: 40px; 
+}
+.form-group h1{
+    font-size: 40px; 
+}
+.form-group p{
+    font-size: 20px;
+}
+.form-group input{
+    width: 290px;
+    padding: 10px;
+    margin-bottom: 30px;
+    font: 1em 'Montserrat' , sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.form-group select{
+    width: 100px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    margin: 15px;
+}
+.form-group button{
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 15px;
+    margin: 20px;
+}
+.form-group button:hover{
+    background-color:#ccc;
+}
+.produto{
+    padding-left: 10px;
+    width:300px;
+    display: flex;
+    margin: 1px;
+    
+}
+.produto label{
+    font-size: 20px;
+    margin: 1px;
+}
+.produto input{
+    width: 60px;
+    margin: 1px;
+}
+.listaDePedidos{
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hrdividir{
+    margin: 5px;
+}

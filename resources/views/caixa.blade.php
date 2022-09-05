@@ -39,9 +39,9 @@
                                 <td>{{ $caixa->PF }}</td>
                                 <td>{{ $caixa->brigadeiro }}</td>
                                 <td>{{ $caixa->metodo_pagamento_1 }} {{ round($caixa->valor_por_cliente,2) }}R$</td>
-                                <td>{{ $caixa->metodo_pagamento_2 }}</td>
-                                <td>{{ $caixa->metodo_pagamento_3 }}</td>
-                                <td>{{ $caixa->metodo_pagamento_4 }}</td>
+                                <td>{{ $caixa->metodo_pagamento_2 }} {{ round($caixa->valor_por_cliente2,2) }}R$</td>
+                                <td>{{ $caixa->metodo_pagamento_3 }} {{ round($caixa->valor_por_cliente3,2) }}R$</td>
+                                <td>{{ $caixa->metodo_pagamento_4 }} {{ round($caixa->valor_por_cliente4,2) }}R$</td>
                                 <td>{{ $caixa->created_at }}</td>
                             </tr>
                             @endforeach
@@ -60,7 +60,7 @@
     border-radius: 20px;
     text-align: center;
     display: flex;
-    margin: 90px;
+    margin: 20px;
     flex-direction: column;
 }
 

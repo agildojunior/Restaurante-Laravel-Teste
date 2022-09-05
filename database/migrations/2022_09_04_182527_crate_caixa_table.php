@@ -24,8 +24,11 @@ return new class extends Migration
             $table->double('preco')->nullable();
             $table->double('valor_por_cliente')->nullable();
             $table->string('metodo_pagamento_1')->nullable();
+            $table->double('valor_por_cliente2')->nullable();
             $table->string('metodo_pagamento_2')->nullable();
+            $table->double('valor_por_cliente3')->nullable();
             $table->string('metodo_pagamento_3')->nullable();
+            $table->double('valor_por_cliente4')->nullable();
             $table->string('metodo_pagamento_4')->nullable();
             $table->timestamps();
         });

@@ -16,13 +16,6 @@ class CaixaController extends Controller
     public function adicionarAoCaixa($id, Request $request){
         
         $var = Mesa::findOrFail($id);
-        $var1 = Produto::findOrFail(1);
-        $var2 = Produto::findOrFail(2);
-        $var3 = Produto::findOrFail(3);
-        $var4 = Produto::findOrFail(4);
-        $var5 = Produto::findOrFail(5);
-        $preco = (($var->qtdd_produto_1 * $var1->preco)+($var->qtdd_produto_2 * $var2->preco)+($var->qtdd_produto_3 * $var3->preco)+($var->qtdd_produto_4 * $var4->preco)+($var->qtdd_produto_5 * $var5->preco));
-        $precodividido = ($preco/$var->qtdd_Pessoas);
 
         Caixa::create([
             'mesa_id' => $var->id,
@@ -31,11 +24,14 @@ class CaixaController extends Controller
             'refrigerante' => $var->qtdd_produto_3,
             'PF' => $var->qtdd_produto_4,
             'brigadeiro' => $var->qtdd_produto_5,
-            'preco' => $preco,
-            'valor_por_cliente' => $precodividido,
+            'preco' => $request->input('pagamentototal'),
+            'valor_por_cliente' => $request->input('pagamento1'),
             'metodo_pagamento_1' => $request->input('metodo1'),
+            'valor_por_cliente2' => $request->input('pagamento2'),
             'metodo_pagamento_2' => $request->input('metodo2'),
+            'valor_por_cliente3' => $request->input('pagamento3'),
             'metodo_pagamento_3' => $request->input('metodo3'),
+            'valor_por_cliente4' => $request->input('pagamento4'),
             'metodo_pagamento_4' => $request->input('metodo4'),
         ]);
 

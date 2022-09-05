@@ -46,7 +46,7 @@
     border-radius: 20px;
     text-align: center;
     display: flex;
-    margin: 90px;
+    margin: 20px;
     flex-direction: column;
 }
 
