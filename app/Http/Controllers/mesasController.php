@@ -27,6 +27,7 @@ class mesasController extends Controller
     }
 
     public function movimentacoesDados(){
+        $this->authorize('is_admin');
         return view('movimentacoes', ['movimentacoes' =>Movimentacoes::all()]);
     }
     

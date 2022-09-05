@@ -11,6 +11,7 @@
 
                 <!-- Navigation Links -->
                 <!-- inicio -->
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Inicio') }}
@@ -28,6 +29,7 @@
                         {{ __('Produtos') }}
                     </x-jet-nav-link>
                 </div>
+                @if(Auth::user()->profile=='admin')
                 <!-- caixa -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('caixa') }}" :active="request()->routeIs('caixa')">
@@ -40,6 +42,7 @@
                         {{ __('Movimentações') }}
                     </x-jet-nav-link>
                 </div>
+                @endif
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -172,7 +175,7 @@
             <x-jet-responsive-nav-link href="{{ route('produtos') }}" :active="request()->routeIs('produtos')">
                 {{ __('Produtos') }}
             </x-jet-responsive-nav-link>
-
+            @if(Auth::user()->profile=='admin')
             <x-jet-responsive-nav-link href="{{ route('caixa') }}" :active="request()->routeIs('caixa')">
                 {{ __('Caixa') }}
             </x-jet-responsive-nav-link>
@@ -180,6 +183,7 @@
             <x-jet-responsive-nav-link href="{{ route('movimentacoes') }}" :active="request()->routeIs('movimentacoes')">
                 {{ __('Movimentações') }}
             </x-jet-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

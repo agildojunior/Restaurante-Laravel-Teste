@@ -10,6 +10,7 @@ use App\Models\Produto;
 class CaixaController extends Controller
 {
     public function caixaDados(){
+        $this->authorize('is_admin');
         return view('caixa', ['caixas' =>Caixa::all()]);
     }
 
