@@ -69,6 +69,63 @@ class mesasController extends Controller
         return redirect('/mesas');
     }
 
+    public function removerPedidos($id, Request $request){
+        $var = Mesa::findOrFail($id);
+
+        //aguas
+        if( $request->input('aguas') <= $var->qtdd_produto_1){
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_1' => $var->qtdd_produto_1 - $request->input('aguas'),
+            ]);
+        }else{
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_1' => $var->qtdd_produto_1 - $var->qtdd_produto_1,
+            ]);
+        }
+        //cervejas
+        if( $request->input('cervejas') <= $var->qtdd_produto_2){
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_2' => $var->qtdd_produto_2 - $request->input('cervejas'),
+            ]);
+        }else{
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_2' => $var->qtdd_produto_2 - $var->qtdd_produto_2,
+            ]);
+        }
+        //refrigerantes
+        if( $request->input('refrigerantes') <= $var->qtdd_produto_3){
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_3' => $var->qtdd_produto_3 - $request->input('refrigerantes'),
+            ]);
+        }else{
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_3' => $var->qtdd_produto_3 - $var->qtdd_produto_3,
+            ]);
+        }
+        //pf
+        if( $request->input('pf') <= $var->qtdd_produto_4){
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_4' => $var->qtdd_produto_4 - $request->input('pf'),
+            ]);
+        }else{
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_4' => $var->qtdd_produto_4 - $var->qtdd_produto_4,
+            ]);
+        }
+        //brigadeiro
+        if( $request->input('brigadeiro') <= $var->qtdd_produto_5){
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_5' => $var->qtdd_produto_5 - $request->input('brigadeiro'),
+            ]);
+        }else{
+            Mesa::findOrFail($id)->update([
+                'qtdd_produto_5' => $var->qtdd_produto_5 - $var->qtdd_produto_5,
+            ]);
+        }
+
+        return redirect('/mesas');
+    }
+
     public function solicitarConta($id, Request $request){
         Mesa::findOrFail($id)->update([
             'status' => 'disponivel',

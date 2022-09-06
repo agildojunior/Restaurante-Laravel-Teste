@@ -36,6 +36,7 @@ Route::middleware([
     Route::get('/mesasSolicitar/{id}', [mesasController::class, 'reservarMesa'])->name('reservarMesa');
     Route::get('/mesasConta/{id}', [mesasController::class, 'solicitarConta'])->name('solicitarConta');
     Route::get('/mesasAddPedidos/{id}', [mesasController::class, 'adicionarPedidos'])->name('adicionarPedidos');
+    Route::get('/mesasremovePedidos/{id}', [mesasController::class, 'removerPedidos'])->name('removerPedidos');
     Route::get('/movimentacoes', [mesasController::class, 'movimentacoesDados'])->name('movimentacoes');
 
     //---------------------- produtos ----------------------

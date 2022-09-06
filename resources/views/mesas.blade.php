@@ -116,6 +116,77 @@
 
                         @endif
 
+                        @if(Auth::user()->profile=='admin')
+                        @if($mesa['status'] == 'ocupada') 
+                        
+                            <label for="modalmesaremover{{ $mesa->id }}" class="buttonmesa">Remover Items</label>
+                            <input type="checkbox" id="modalmesaremover{{ $mesa->id }}" class="checkboxModal">
+                            <div class="modalmesadiv">
+                                <label for="modalmesaremover{{ $mesa->id }}" class="fecharModal">X</label>
+                                <div class="conteudomodal">
+                                    <div class="form-group">
+                                        <h1 class="h1pedidos">Mesa: {{$mesa['id']}}</h1>
+                                        <hr class="hrdividir"/>
+                                        <p>Quantidade atual de</p>
+                                        <div class="divcenter">
+                                            <div class="listaDePedidos">
+                                                <p>Aguas: {{$mesa['qtdd_produto_1']}}</p>
+                                                <p>Cervejas: {{$mesa['qtdd_produto_2']}}</p>
+                                                <p>Refrigerantes: {{$mesa['qtdd_produto_3']}}</p>
+                                                <p>PF: {{$mesa['qtdd_produto_4']}}</p>
+                                                <p>Brigadeiro: {{$mesa['qtdd_produto_5']}}</p>
+                                                <br/>
+                                            </div>
+                                        </div>
+                                        <hr class="hrdividir"/>
+                                        <form action="{{ route('removerPedidos', ['id' => $mesa['id']]) }}" method="get">
+                                            <div class="divcenter">
+                                                <div class="produto">
+                                                    <label>Remover: <label>
+                                                    <input type="text" value="0" placeholder="..." name="aguas" required>
+                                                    <label>Aguas<label>
+                                                </div>
+                                            </div>
+                                            <div class="divcenter">
+                                                <div class="produto">
+                                                    <label>Remover: <label>
+                                                    <input type="text" value="0" placeholder="..." name="cervejas" required>
+                                                    <label>Cervejas<label>
+                                                </div>
+                                            </div>
+                                            <div class="divcenter">
+                                                <div class="produto">
+                                                    <label>Remover: <label>
+                                                    <input type="text" value="0" placeholder="..." name="refrigerantes" required>
+                                                    <label>Refrigerantes<label>
+                                                </div>
+                                            </div>
+                                            <div class="divcenter">
+                                                <div class="produto">
+                                                    <label>Remover: <label>
+                                                    <input type="text" value="0" placeholder="..." name="pf" required>
+                                                    <label>PF<label>
+                                                </div>
+                                            </div>
+                                            <div class="divcenter">
+                                                <div class="produto">
+                                                    <label>Remover: <label>
+                                                    <input type="text" value="0" placeholder="..." name="brigadeiro" required>
+                                                    <label>Brigadeiro<label>
+                                                </div>
+                                            </div>
+                                            <hr class="hrdividir"/>
+                                            <div class="form-group">
+                                                <button type="submit" class="">Remover Pedidos</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endif
+                        @endif
+
                         @if($mesa['status'] == 'ocupada') 
                         <label for="modalmesaconta{{ $mesa->id }}" class="buttonmesa">Receber Conta</label>
                             <input type="checkbox" id="modalmesaconta{{ $mesa->id }}" class="checkboxModal">
@@ -209,6 +280,22 @@
     display: block;
 }
 #modalmesa5:checked + .modalmesadiv{
+    display: block;
+}
+/* -------------------------- */
+#modalmesaremover1:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaremover2:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaremover3:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaremover4:checked + .modalmesadiv{
+    display: block;
+}
+#modalmesaremover5:checked + .modalmesadiv{
     display: block;
 }
 /* -------------------------- */
