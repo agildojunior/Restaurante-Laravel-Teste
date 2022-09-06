@@ -13,33 +13,43 @@
                 <!-- inicio -->
                 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('dashboard') }}">
+                        <div class="opNav">
                         {{ __('Inicio') }}
+                        </div>
                     </x-jet-nav-link>
                 </div>
                 <!-- mesas -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('mesas') }}" :active="request()->routeIs('mesas')">
+                    <x-jet-nav-link href="{{ route('mesas') }}">
+                        <div class="opNav">
                         {{ __('Mesas') }}
+                        </div>
                     </x-jet-nav-link>
                 </div>
                 <!-- produtos -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('produtos') }}" :active="request()->routeIs('produtos')">
+                    <x-jet-nav-link href="{{ route('produtos') }}">
+                        <div class="opNav">
                         {{ __('Produtos') }}
+                        </div>
                     </x-jet-nav-link>
                 </div>
                 @if(Auth::user()->profile=='admin')
                 <!-- caixa -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('caixa') }}" :active="request()->routeIs('caixa')">
+                    <x-jet-nav-link href="{{ route('caixa') }}">
+                        <div class="opNav">
                         {{ __('Caixa') }}
+                        </div>
                     </x-jet-nav-link>
                 </div>
                 <!-- movimentacoes -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('movimentacoes') }}" :active="request()->routeIs('movimentacoes')">
+                    <x-jet-nav-link href="{{ route('movimentacoes') }}">
+                        <div class="opNav">
                         {{ __('Movimentações') }}
+                        </div>
                     </x-jet-nav-link>
                 </div>
                 @endif
@@ -107,8 +117,9 @@
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        <div class="opNav">
                                         {{ Auth::user()->name }}
-
+                                        </div>
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                         </svg>
@@ -164,24 +175,34 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-jet-responsive-nav-link href="{{ route('dashboard') }}">
+                <div class="opNav">
                 {{ __('Inicio') }}
+                </div>
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('mesas') }}" :active="request()->routeIs('mesas')">
+            <x-jet-responsive-nav-link href="{{ route('mesas') }}">
+                <div class="opNav">
                 {{ __('Mesas') }}
+                </div>
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('produtos') }}" :active="request()->routeIs('produtos')">
+            <x-jet-responsive-nav-link href="{{ route('produtos') }}">
+                <div class="opNav">
                 {{ __('Produtos') }}
+                </div>
             </x-jet-responsive-nav-link>
             @if(Auth::user()->profile=='admin')
-            <x-jet-responsive-nav-link href="{{ route('caixa') }}" :active="request()->routeIs('caixa')">
+            <x-jet-responsive-nav-link href="{{ route('caixa') }}">
+                <div class="opNav">
                 {{ __('Caixa') }}
+                </div>
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('movimentacoes') }}" :active="request()->routeIs('movimentacoes')">
+            <x-jet-responsive-nav-link href="{{ route('movimentacoes') }}">
+                <div class="opNav">
                 {{ __('Movimentações') }}
+                </div>
             </x-jet-responsive-nav-link>
             @endif
         </div>
@@ -203,12 +224,12 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-jet-responsive-nav-link href="{{ route('profile.show') }}">
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
                 @endif
@@ -232,12 +253,12 @@
                     </div>
 
                     <!-- Team Settings -->
-                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
+                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                         {{ __('Team Settings') }}
                     </x-jet-responsive-nav-link>
 
                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                        <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
+                        <x-jet-responsive-nav-link href="{{ route('teams.create') }}">
                             {{ __('Create New Team') }}
                         </x-jet-responsive-nav-link>
                     @endcan

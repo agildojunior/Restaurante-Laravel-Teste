@@ -1,7 +1,8 @@
 <x-app-layout>
+<div class="fundo">
     <!-- tailwind -->
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="tituloNav">
             {{ __('Inicio') }}
         </h2>
     </x-slot>
@@ -15,6 +16,7 @@
             </div>
         </div>
     </div>
+</div>
 </x-app-layout>
 <style>
     

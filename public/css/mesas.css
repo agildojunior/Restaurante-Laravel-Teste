@@ -16,7 +16,7 @@
     margin: 10px;
 }
 .buttonmesa:hover{
-    color: #4169e1;
+    color: rgb(119, 83, 68) ;
     cursor: pointer;
 }
 .mesa{
@@ -24,11 +24,11 @@
     align-items: center;
     text-align: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(223, 202, 194) ;
     border-radius: 5px;
     display: flex;
     margin: 20px;
-    background-color: #ddd;
+    background-color: rgb(255, 239, 233);
 }
 .checkboxModal{
     display: none;
@@ -92,7 +92,7 @@
 }
 .fecharModal:hover{
     cursor: pointer;
-    color: #4169e1;
+    color: rgb(119, 83, 68) ;
 }
 .conteudomodal{
     display: block;
@@ -109,10 +109,12 @@
     justify-content: center;
 }
 .form-group .h1solicitar{
+    color: rgb(119, 83, 68) ;
     margin-top: 25vh;
     font-size: 40px; 
 }
 .h1pedidos{
+    color: rgb(119, 83, 68) ;
     font-size: 40px; 
 }
 .form-group h1{
@@ -140,15 +142,16 @@
 }
 .form-group button{
     width: 200px;
-    background-color: white;
-    border: 1px solid black;
+    background-color: rgb(255, 239, 233);
+    border: 1px solid rgb(105, 72, 58) ;
     border-radius: 5px;
-    color: black;
+    font-weight: bold;
+    color: rgb(105, 72, 58) ;
     padding: 15px;
     margin: 20px;
 }
 .form-group button:hover{
-    background-color:#ccc;
+    background-color:rgb(253, 219, 205);
 }
 .produto{
     padding-left: 10px;

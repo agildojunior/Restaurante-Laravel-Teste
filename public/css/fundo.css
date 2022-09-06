@@ -1,0 +1,31 @@
+.fundo{
+    /* background-color: rgb(209, 243, 227); */
+    background-image: url("../images/fundo.png") ;
+    height: 100vh;
+    background: cover;
+}
+
+.backgroundNav{
+    background-color: rgb(163, 114 ,93);
+    border-bottom: solid 2px rgb(119, 83, 68) ;
+}
+
+.theadtabelas{
+    background-color: rgb(255, 239, 233);
+    border-bottom: solid 2px rgb(253, 219, 205);
+}
+
+.tituloNav{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.opNav{
+    color: rgb(119, 83, 68);
+    font-weight: bold;
+}
+
+.bortanav{
+    border-bottom: solid 2px rgb(119, 83, 68);
+}

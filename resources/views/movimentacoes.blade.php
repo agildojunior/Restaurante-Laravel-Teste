@@ -2,9 +2,10 @@
     <link rel="stylesheet" href="{{ asset('css/caixa.css') }}"> 
 <head>
 <x-app-layout>
+<div class="fundo">
     <!-- tailwind -->
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="tituloNav">
             {{ __('Movimentações') }}
         </h2>
     </x-slot>
@@ -15,7 +16,7 @@
 
                 <div class="container2">
                     <table class="table-fixed">
-                        <thead class="bg-gray-100 border-b-2 border-gray-200">
+                        <thead class="theadtabelas">
                             <tr>
                                 <th class="p-3 text-sm font-bold tracking-wide text-left padding5">Mesa</th>
                                 <th class="p-3 text-sm font-bold tracking-wide text-left padding5">Valor</th>
@@ -47,6 +48,7 @@
             </div>
         </div>
     </div>
+</div>
 </x-app-layout>
 
 <style>
