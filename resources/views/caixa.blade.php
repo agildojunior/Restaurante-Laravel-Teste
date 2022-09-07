@@ -67,6 +67,9 @@
                              @endforeach
                         </tbody>
                     </table>
+                    <div class="border border-gray-200 padding5 theadtabelas">
+                        {{$caixas->links()}}
+                    </div>
                 </div>
 
             </div>

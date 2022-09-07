@@ -28,7 +28,9 @@ class mesasController extends Controller
 
     public function movimentacoesDados(){
         $this->authorize('is_admin');
-        return view('movimentacoes', ['movimentacoes' =>Movimentacoes::all()]);
+        $movimentacoes = Movimentacoes::paginate(10);
+
+        return view('movimentacoes', compact('movimentacoes'));
     }
     
     public function reservarMesa($id, Request $request){
@@ -70,6 +72,7 @@ class mesasController extends Controller
     }
 
     public function removerPedidos($id, Request $request){
+        $this->authorize('is_admin');
         $var = Mesa::findOrFail($id);
 
         //aguas

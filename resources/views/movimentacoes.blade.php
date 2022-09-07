@@ -41,8 +41,12 @@
                                 <td class="w-5 p-3 text-sm text-gray-700 border border-gray-200 padding5">{{ $movimentacao->created_at }}</td>
                             </tr>
                              @endforeach
+                             
                         </tbody>
                     </table>
+                    <div class="border border-gray-200 padding5 theadtabelas">
+                        {{$movimentacoes->links()}}
+                    </div>
                 </div>
 
             </div>

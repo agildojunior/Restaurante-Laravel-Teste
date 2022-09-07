@@ -11,7 +11,9 @@ class CaixaController extends Controller
 {
     public function caixaDados(){
         $this->authorize('is_admin');
-        return view('caixa', ['caixas' =>Caixa::all()]);
+        $caixas = Caixa::paginate(10);
+        
+        return view('caixa', compact('caixas'));
     }
 
     public function adicionarAoCaixa($id, Request $request){
